@@ -1,14 +1,4 @@
-def is_leap(some_year):
-    leap = False
-    if 1900 <= some_year <= 100000:
-        if some_year % 400 == 0:
-            leap = True
-        elif some_year % 100 == 0:
-            leap = False
-        elif some_year % 4 == 0:
-            leap = True
-        return leap
-    raise ValueError("Year must be within range [1900; 100,000]")
+from hackerrank.challenges import is_leap
 
 
 def test_wrong_input():
@@ -28,7 +18,7 @@ def test_correct_input():
 
 def test_leap_year():
     assert not is_leap(1990)
-    leap_years = [2000, 2400]
+    leap_years = [2000, 2004, 2400]
     non_leap_years = [1900, 1990, 2100, 2200, 2300]
     for y in leap_years:
         assert is_leap(y)

@@ -32,3 +32,16 @@ def generate_squares(limit):
             yield i * i
     else:
         raise ValueError("Value must be within [1; 20] range")
+
+
+def is_leap(some_year):
+    leap = False
+    if 1900 <= some_year <= 100000:
+        if some_year % 400 == 0:
+            leap = True
+        elif some_year % 100 == 0:
+            leap = False
+        elif some_year % 4 == 0:
+            leap = True
+        return leap
+    raise ValueError("Year must be within range [1900; 100,000]")
