@@ -45,3 +45,13 @@ def is_leap(some_year):
             leap = True
         return leap
     raise ValueError("Year must be within range [1900; 100,000]")
+
+
+def cuboid_vectorization(maxx, maxy, maxz, exclusion):
+    res = [
+        [i, j, k]
+        for i in range(0, maxx + 1)
+        for j in range(0, maxy + 1)
+        for k in range(0, maxz + 1)
+        if i + j + k != exclusion]
+    return res
