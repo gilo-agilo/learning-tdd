@@ -1,13 +1,4 @@
-def check_range(n):
-    if 1 <= n <= 10000000000:
-        return True
-    raise ValueError("Parameter n should be within [1; 10,000,000,000] range")
-
-
-def calculate_3ops(arg1, arg2):
-    check_range(arg1)
-    check_range(arg2)
-    return [arg1 + arg2, arg1 - arg2, arg1 * arg2]
+from hackerrank.challenges import calculate_3ops
 
 
 def test_input_arg():

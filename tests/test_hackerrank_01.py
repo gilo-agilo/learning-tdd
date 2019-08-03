@@ -5,19 +5,7 @@ import re
 import sys
 import pytest
 
-
-def evaluate(n):
-    if 1 <= n <= 100:
-        if n % 2 == 0:
-            if 2 <= n <= 5:
-                return "Not Weird"
-            else:
-                if n > 20:
-                    return "Not Weird"
-                return "Weird"
-        else:
-            return "Weird"
-    raise ValueError("Parameter n should be within [1; 100] range")
+from hackerrank.challenges import evaluate
 
 
 def test_input():

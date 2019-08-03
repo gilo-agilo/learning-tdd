@@ -1,13 +1,8 @@
+from hackerrank.challenges import generate_squares
+
+
 def calculate_squares(limit):
     return list(generate_squares(limit))
-
-
-def generate_squares(limit):
-    if 1 <= limit <= 20:
-        for i in range(0, limit):
-            yield i * i
-    else:
-        raise ValueError("Value must be within [1; 20] range")
 
 
 def print_results(limit):

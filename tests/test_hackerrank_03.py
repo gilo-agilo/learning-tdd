@@ -1,5 +1,4 @@
-def divisions(a, b):
-    return [a // b, a / b]
+from hackerrank.challenges import divisions
 
 
 def test_division():
