@@ -55,3 +55,27 @@ def cuboid_vectorization(maxx, maxy, maxz, exclusion):
         for k in range(0, maxz + 1)
         if i + j + k != exclusion]
     return res
+
+
+def find_runner_up_score(n, arr):
+    def check_value(item):
+        if not (-100 <= item <= 100):
+            raise ValueError('Value outside of range [-100; 100]')
+
+    if 2 <= n <= 10:
+        if len(arr) != n:
+            raise ValueError('Array must have exactly {} items'.format(n))
+
+        max = -200
+        prev_max = max
+        for i in range(0, n):
+            check_value(arr[i])
+            if arr[i] > max:
+                prev_max = max
+                max = arr[i]
+            elif prev_max < arr[i] < max:
+                prev_max = arr[i]
+
+        return prev_max
+    else:
+        raise ValueError('Value outside of range [2; 10]')
